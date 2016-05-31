@@ -1,0 +1,15 @@
+{
+  "primary": {
+    "delineator": "",
+    "timer": "bursts",
+    "timer_args": [2000, 3000, 3000, 40, 5],
+    "classes": ["red", "blue", "green", "none"],
+    "changes": [
+      ["class"],
+      ["class"],
+      ["thesaurus"],
+      ["translate", "permanently"],
+      ["english_class"]
+    ]
+  }
+}

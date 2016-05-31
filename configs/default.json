@@ -1,0 +1,4 @@
+{
+  "timer": "random",
+  "timer_args": [1000, 280, 1280]
+}

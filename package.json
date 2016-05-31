@@ -1,0 +1,10 @@
+{
+  "name": "anoetry",
+  "version": "1.0.0",
+  "description": "anoetry",
+  "dependencies": {
+    "async": "~0.2.7",
+    "quest": "~0.2.4",
+    "underscore": "~1.8.3"
+  }
+}

@@ -1,0 +1,24 @@
+div.main {
+  margin: 100px;
+  margin-top: 70px;
+  line-height: 250%;
+}
+
+span.red {
+  background: #f00;
+  color: #FFD700;
+  font-size: 25pt;
+  font-weight: bolder;
+}
+
+span.blue {
+  background: #003366;
+  color: #fff;
+  text-decoration: italic;
+  font-size: 16pt;
+}
+
+span.green {
+  background: #0f0;
+  color: #ff0;
+}

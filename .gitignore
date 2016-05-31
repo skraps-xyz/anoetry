@@ -1,0 +1,5 @@
+.DS_Store
+mymake.sh
+node_modules
+.swp
+
