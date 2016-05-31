@@ -1,4 +1,14 @@
 {
-  "timer": "random",
-  "timer_args": [1000, 280, 1280]
+  "primary": {
+    "delineator": "",
+    "timer": "random",
+    "timer_args": [1000, 280, 1280],
+    "timer_args": [2000, 2000, 200, 0.96],
+    "classes": ["red", "blue", "green", "linethrough", "all_yellow", "none"],
+    "changes": [
+      ["class"],
+      ["obfuscate"],
+      ["english_class"]
+    ]
+  }
 }
