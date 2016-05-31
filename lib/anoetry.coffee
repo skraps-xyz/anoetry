@@ -11,10 +11,14 @@ JSON_variable = (var_name, json_object) ->
   "<script>#{var_name} = #{JSON.stringify json_object}</script>"
 
 include_script = (script_name) ->
-  fs.readFileSync("#{__dirname}/frontend/scripts/#{script_name}", "utf8") + "\n"
+  fs.readFileSync("#{__dirname}/frontend/scripts/#{script_name}", "utf8") + ";\n"
 
 module.exports =
   build: (anoem_name, config, input_text, cb) ->
+    # separate out master config from the rest of the config
+    master_config = config.master
+    delete config.master
+
     # delineators maps a delinator back to the layer associated with it
     delineators = {}
     for layer in _.keys(config)
@@ -43,7 +47,17 @@ span {
   padding-right: 3px;
   font-family: Verdana, Helvetica, Arial;
   font-size: 15pt;
-} """ # maybe font size varies with number of words?
+}\n """ # maybe font size varies with number of words?
+    default_main_div = """
+div.main {
+  margin: 100px;
+  margin-top: 70px;
+  line-height: 250%;
+  text-align: left;
+}\n """
+    colors = {white: "fff", black: "000", red: "f00", yellow: "ff0", blue: "00f"}
+    all_colors = for color, hex of colors
+      "span.all_#{color} {\n  background: ##{hex};\n  color: ##{hex}\n}\n"
 
     async.auto {
       translations: (cb_a) -> translations.build all_words, cb_a
@@ -55,8 +69,10 @@ span {
           '<meta charset="UTF-8">'
           "<title>#{anoem_name}</title>"
           '<style>'
-          default_span
+          master_config?.main_div or default_main_div
+          master_config?.default_span or default_span
           fs.readFileSync "#{__dirname}/frontend/style/style.css", "UTF-8"
+          all_colors.join('\n')
           '</style>'
           '<script>'
           '\n'
@@ -65,22 +81,26 @@ span {
           '<!-- underscore -->'
           # include_script "underscore.js"
           '<!-- base64 -->'
-          # include_script "base64.js"
+          include_script "base64.js"
+          '<!-- md5 -->'
+          include_script "md5.js"
           include_script "timers.js"
           '</script>'
           '\n'
-          JSON_variable("config", config),
-          JSON_variable("word_layers", word_layers),
-          JSON_variable("thesaurus", thesaurus),
-          JSON_variable("translations", translations),
+          JSON_variable("config", config)
+          JSON_variable("word_layers", word_layers)
+          JSON_variable("thesaurus", thesaurus)
+          JSON_variable("translations", translations)
           "</head>"
           "\n\n\n"
           "<body>"
-          "<div class='main'>",
-          html_lines.join("<br>\n"),
-          "</div>",
-          "</body>",
-          "<script>",
+          "<center>"
+          "<div class='main'>"
+          html_lines.join("<br>\n")
+          "</div>"
+          "</center>"
+          "</body>"
+          "<script>"
           include_script "script.js" # make this body.onload
           "</script>"
           "</html>"

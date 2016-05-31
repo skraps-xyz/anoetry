@@ -1,0 +1,16 @@
+{
+  "master": {
+    "default_span": "span {\npadding-left: 3px;\npadding-right: 3px;\nfont-family: Verdana, Helvetica, Arial;\nfont-size: 12pt;\nmargin: 0;}\n",
+    "main_div": "div.main {\nmargin: 100px;\nmargin-top: 70px;\nline-height: 150%;\npadding-top: 20pt;\npadding-bottom:; 20pt;\npadding-left: 40pt;\npadding-right: 40pt;\nborder-style: solid;\nborder-width: 10;\nborder-color: #000; display: inline-block;\n}"
+  },
+  "primary": {
+    "delineator": "",
+    "timer": "exponential_acceleration",
+    "timer_args": [2000, 2000, 200, 0.96],
+    "classes": ["all_black", "all_white"],
+    "changes": [
+      ["class", "permanently"]
+    ]
+
+  }
+}
