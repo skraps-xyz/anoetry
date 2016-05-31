@@ -52,6 +52,7 @@ span {
 div.main {
   margin: 100px;
   margin-top: 70px;
+  margin-bottom: 70px;
   line-height: 250%;
   text-align: left;
 }\n """
@@ -95,8 +96,12 @@ div.main {
           "\n\n\n"
           "<body>"
           "<center>"
+          "<div class='container'>"
+          "<div class='wrapper'>"
           "<div class='main'>"
           html_lines.join("<br>\n")
+          "</div>"
+          "</div>"
           "</div>"
           "</center>"
           "</body>"

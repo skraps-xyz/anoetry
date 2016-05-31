@@ -6,6 +6,7 @@
 div.main {
   margin: 100px;
   margin-top: 70px;
+  margin-bottom: 70px;
   line-height: 250%;
   text-align: left;
 }
@@ -17,6 +18,22 @@ span {
   font-size: 15pt;
 }
  
+html, body {
+    height: 100%;
+}
+
+div.container {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+
+div.wrapper {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+}
+
 span.red {
   background: #f00;
   color: #FFD700;
@@ -617,6 +634,8 @@ e=n.propHooks[b]),void 0!==c?e&&"set"in e&&void 0!==(d=e.set(a,c,b))?d:a[b]=c:e&
 
 <body>
 <center>
+<div class='container'>
+<div class='wrapper'>
 <div class='main'>
   <span id='primary-0'>Memory</span>&nbsp;<span id='primary-1'>and</span>&nbsp;<span id='primary-2'>desire,</span>&nbsp;<span id='primary-3'>so</span>&nbsp;<span id='primary-4'>many.</span>
 <br>
@@ -668,6 +687,8 @@ e=n.propHooks[b]),void 0!==c?e&&"set"in e&&void 0!==(d=e.set(a,c,b))?d:a[b]=c:e&
 <br>
   <span></span>
 
+</div>
+</div>
 </div>
 </center>
 </body>
