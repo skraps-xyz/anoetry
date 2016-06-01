@@ -56,7 +56,13 @@ div.main {
   line-height: 250%;
   text-align: left;
 }\n """
-    colors = {white: "fff", black: "000", red: "f00", yellow: "ff0", blue: "00f"}
+    colors =
+      white: "fff"
+      black: "000"
+      red: "f00"
+      yellow: "ff0"
+      blue: "00f"
+      orange: "f70"
     all_colors = for color, hex of colors
       "span.all_#{color} {\n  background: ##{hex};\n  color: ##{hex}\n}\n"
 
@@ -70,9 +76,10 @@ div.main {
           '<meta charset="UTF-8">'
           "<title>#{anoem_name}</title>"
           '<style>'
+          fs.readFileSync "#{__dirname}/frontend/style/style.css", "UTF-8"
           master_config?.main_div or default_main_div
           master_config?.default_span or default_span
-          fs.readFileSync "#{__dirname}/frontend/style/style.css", "UTF-8"
+          master_config?.custom_css or ""
           all_colors.join('\n')
           '</style>'
           '<script>'
