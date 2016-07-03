@@ -24,9 +24,9 @@ npm install
 
 2. Navigate to the anoetry folder.
 
-3. `./make.sh -n "name of your anoem" <path to your .txt file>`
+3. `./make.sh -n name_of_your_anoem <path to your .txt file>`
 
-4. This should create a file in `./anoems` called `"name of your anoem.html"`. Open it in a web browser to see what it looks like.
+4. This should create a file in `./anoems` called `name_of_your_anoem.html`. Open it in a web browser to see what it looks like.
 
 ## Documentation
 
@@ -144,7 +144,7 @@ This makes it so that after this change is executed on a given word, that word w
 "changes": [
   ["class"],
   ["class"],
-  ["obfuscate", "class", "linethrough", permanently"]
+  ["obfuscate", "class", "linethrough", "permanently"]
 ]
 ```
 
