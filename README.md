@@ -36,7 +36,8 @@ Customizing your anoem is done by creating a config `.json` file of the form
 {
   "master": {
     "main_div": "div.main {<custom css>}",
-    "custom_css": "span.custom_class {<custom css>}; ..."
+    "custom_css": "span.custom_class {<custom css>}; ...",
+    "custom_js": "<custom javascript>"
   },
   "primary": {
     "delineator": "",
@@ -56,7 +57,7 @@ Customizing your anoem is done by creating a config `.json` file of the form
   }
 }
 ```
-* `master` is optional, if you want to add custom classes for spans or modify the main div that contains your anoem, do it there.
+* `master` is optional, if you want to add custom classes for spans or modify the main div that contains your anoem, do it there. You can also add custom javascript.
 * `primary.delineator` for now, it's gotta be `""`.
 * `primary.timer` the name of a timer (see "Timers" below)
 * `primary.timer_args` the arguments for the timer chosen (see "Timers" below)

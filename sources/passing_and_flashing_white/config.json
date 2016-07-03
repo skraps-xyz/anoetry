@@ -1,0 +1,17 @@
+{
+  "master": {
+    "default_span": "span {\npadding-left: 3px;\npadding-right: 3px;\nfont-family: Verdana, Helvetica, Arial;\nfont-size: 12pt;\nmargin: 0}\n",
+    "main_div": "div.main {\nmargin: 100px;\nmargin-top: 70px;\nline-height: 150%;\npadding-top: 20pt;\npadding-left: 40pt;\npadding-right: 40pt;\ndisplay: inline-block; border: 50px solid rgba(225,225,225,1)\n}",
+    "custom_js": "divmain = $(\".main\").eq(0);\ndivmain.css(\"border\", \"30px solid rgba(225,225,225,1)\")\n;kits = ['-webkit-transition','-moz-transition','transition', '-o-transition'];\nfor(i = 0; i < 4; i++) {\n  divmain.css(kits[i], \"border-color 55s linear\");\n }\ndivmain.css(\"border\", \"30px solid rgba(255,255,255,1)\")"
+  },
+  "primary": {
+    "delineator": "",
+    "timer": "exponential_acceleration",
+    "timer_args": [2000, 2000, 200, 0.96],
+    "classes": ["all_white"],
+    "changes": [
+      ["class", "permanently"]
+    ]
+
+  }
+}

@@ -63,6 +63,7 @@ div.main {
       yellow: "ff0"
       blue: "00f"
       orange: "f70"
+      green: "0f0"
     all_colors = for color, hex of colors
       "span.all_#{color} {\n  background: ##{hex};\n  color: ##{hex}\n}\n"
 
@@ -101,7 +102,7 @@ div.main {
           JSON_variable("translations", translations)
           "</head>"
           "\n\n\n"
-          "<body>"
+          "<body onload='animation_javascript()'>"
           "<center>"
           "<div class='container'>"
           "<div class='wrapper'>"
@@ -113,7 +114,10 @@ div.main {
           "</center>"
           "</body>"
           "<script>"
+          "function animation_javascript() {\n"
           include_script "script.js" # make this body.onload
+          master_config.custom_js
+          "}\n"
           "</script>"
           "</html>"
         ].join "\n"
