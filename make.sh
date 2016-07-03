@@ -10,7 +10,7 @@ while test $# -gt 0; do
       echo "Compiles your anoem"
       echo " "
       echo "Usage:   ./make.sh [options] [source]"
-      echo "Example: ./make.sh --name trees --source ~/poems/trees"
+      echo "Example: ./make.sh -n trees ~/poems/trees"
       echo ""
       echo "options:"
       echo ""
@@ -51,6 +51,6 @@ while test $# -gt 0; do
   esac
 done
 
-coffee -c ./lib/frontend/scripts/*.coffee
-coffee main.coffee $1 > ./anoems/$NAME.html
+./node_modules/coffee-script/bin/coffee -c ./lib/frontend/scripts/*.coffee
+./node_modules/coffee-script/bin/coffee main.coffee $1 > ./anoems/$NAME.html
 

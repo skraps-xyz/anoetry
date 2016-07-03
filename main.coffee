@@ -4,7 +4,7 @@ fs = require 'fs'
 anoetry = require './lib/anoetry.coffee'
 
 anoem_name = process.env['NAME']
-config_file = process.env['CFG'] or "./lib/default_config.json"
+config_file = process.env['CFG'] or "./configs/default.json"
 source_file = process.argv[2]
 
 unless source_file? and anoem_name?
