@@ -37,4 +37,4 @@ span.linethrough {
   text-decoration: line-through;
 }
 
-/* span.all_colors are generated and defined in script.coffee */
+/* span.all_colors are generated and defined in lib/anoetry.coffee */
